@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">llsif</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_result">Result</string>
+    <string name="title_prompt">love live calculator</string>
+    <string name="prompt_attribute">choose attribute</string>
+    <string name="cool">cool</string>
+    <string name="smile">smile</string>
+    <string name="pure">pure</string>
+    <string name="prompt_difficulty">choose difficulty</string>
+    <string name="easy">2ez</string>
+    <string name="medium">medium</string>
+    <string name="hard">hard</string>
+    <string name="expert">expert</string>
+</resources>
