@@ -28,9 +28,8 @@ public class MainActivity extends AppCompatActivity {
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "query", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, ResultActivity.class));
             }
         });
     }
@@ -104,8 +103,9 @@ public class MainActivity extends AppCompatActivity {
     public void query (View view){
 
 
-        Intent intent = new Intent(this, ResultActivity.class);
+        //Intent intent = new Intent(this, ResultActivity.class);
 
     }
 
 }
+
