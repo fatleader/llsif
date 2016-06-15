@@ -21,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
     public int difficulty  = -1;
     public int attribute = - 1;
 
+    public String result = null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,13 +31,19 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+
+
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 // This is where we are going to send our query.
+                Bundle queryString = new Bundle();
+                queryString.putString("query", result);
 
-                startActivity(new Intent(MainActivity.this, ResultActivity.class));
+                Intent i = new Intent(MainActivity.this, ResultActivity.class);
+                i.putExtras(queryString);
+                startActivity(i);
             }
         });
     }
@@ -109,9 +117,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public String query (View view, int difficulty, int attribute){
-
-        String result = null;
+    public String selectQuery (View view, int difficulty, int attribute){
 
         // if by now no difficulty is chosen
         if (difficulty == -1 || attribute == -1){

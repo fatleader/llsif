@@ -1,5 +1,6 @@
 package com.example.hotz.llsif;
 
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -20,8 +21,22 @@ public class ResultActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         // call dbhelper constructor!
+
+        String query = getQuery();
+
+
+
         songDb = new DatabaseHelper(this);
 
+
+    }
+
+    public String getQuery (){
+
+        Bundle p = getIntent().getExtras();
+        String query = p.getString("query");
+
+        return query;
 
     }
 
