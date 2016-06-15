@@ -1,6 +1,7 @@
 package com.example.hotz.llsif;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -10,6 +11,7 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.RadioButton;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -29,6 +31,16 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        Typeface myTypeface = Typeface.createFromAsset(getAssets(),"LISTFCEI.TTF");
+        TextView myTextview = (TextView)findViewById(R.id.title);
+        myTextview.setTypeface(myTypeface);
+
+        Typeface myTypeface2 = Typeface.createFromAsset(getAssets(),"FF Magda Clean Mono OT Regular.ttf");
+        TextView myTextview2 = (TextView)findViewById(R.id.cattribute);
+        TextView myTextview3 = (TextView)findViewById(R.id.textView3) ;
+        myTextview2.setTypeface(myTypeface2);
+        myTextview3.setTypeface(myTypeface2);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
 
