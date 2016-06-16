@@ -7,10 +7,13 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="30dp"
+    android:paddingTop="16dp"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.hotz.llsif.MainActivity"
-    tools:showIn="@layout/activity_main">
+    tools:showIn="@layout/activity_main"
+    >
+
+
 
     <TextView
         android:layout_width="wrap_content"
@@ -23,49 +26,54 @@
         android:fontFamily="monospace"
         android:id="@+id/title"
         android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="false"/>
+        android:layout_alignParentLeft="false"
+        android:textColor="#FF4D4D"/>
 
     <TextView
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Choose Attribute:"
-        android:textSize="25sp"
+        android:textSize="20sp"
         android:textAlignment="center"
         android:fontFamily="monospace"
         android:layout_marginTop="100dp"
         android:id="@+id/cattribute"
         android:layout_below="@+id/textView"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:textColor="#FF4D4D"/>
 
     <RadioGroup
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView"
-        android:layout_centerHorizontal="true"
         android:layout_marginTop="130dp"
-        android:id="@+id/attributes">
+        android:id="@+id/attributes"
+        android:layout_alignLeft="@+id/difficulty"
+        android:layout_alignStart="@+id/difficulty">
 
         <RadioButton android:id="@+id/cool"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Cool"
             android:onClick="onAttributeButtonClicked"
-            android:layout_gravity="center_horizontal"/>
+            android:layout_gravity="center_horizontal"
+            android:textColor="#FF4D4D"/>
 
         <RadioButton android:id="@+id/pure"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Pure"
             android:onClick="onAttributeButtonClicked"
-            android:layout_gravity="center_horizontal"/>
+            android:layout_gravity="center_horizontal"
+            android:textColor="#FF4D4D"/>
 
         <RadioButton android:id="@+id/smile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Smile"
             android:onClick="onAttributeButtonClicked"
-            android:layout_gravity="center_horizontal"/>
+            android:textColor="#FF4D4D"/>
 
     </RadioGroup>
 
@@ -73,20 +81,23 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="Choose Difficulty:"
-        android:textSize="25sp"
+        android:textSize="20sp"
         android:textAlignment="center"
         android:fontFamily="monospace"
         android:layout_marginTop="250dp"
         android:id="@+id/textView3"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignLeft="@+id/cattribute"
+        android:layout_centerVertical="true"
+        android:textColor="#FF4D4D"/>
 
     <RadioGroup
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView3"
-        android:layout_centerHorizontal="true"
         android:layout_marginTop="5dp"
-        android:id="@+id/difficulty">
+        android:id="@+id/difficulty"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
 
 
         <RadioButton android:id="@+id/easy"
@@ -94,28 +105,32 @@
             android:layout_height="wrap_content"
             android:text="Easy"
             android:onClick="onDifficultyButtonClicked"
-            android:layout_gravity="center_horizontal" />
+            android:layout_gravity="center"
+            android:textColor="#FF4D4D"/>
 
         <RadioButton android:id="@+id/medium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Medium"
             android:onClick="onDifficultyButtonClicked"
-            android:layout_gravity="center_horizontal" />
+            android:layout_gravity="center"
+            android:textColor="#FF4D4D"/>
 
         <RadioButton android:id="@+id/hard"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Hard"
             android:onClick="onDifficultyButtonClicked"
-            android:layout_gravity="center_horizontal" />
+            android:layout_gravity="center_horizontal"
+            android:textColor="#FF4D4D"/>
 
         <RadioButton android:id="@+id/expert"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Expert"
             android:onClick="onDifficultyButtonClicked"
-            android:layout_gravity="center_horizontal" />
+            android:layout_gravity="center_horizontal"
+            android:textColor="#FF4D4D"/>
 
     </RadioGroup>
 

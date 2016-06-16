@@ -164,9 +164,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         SQLiteDatabase db = this.getReadableDatabase();
 
-        Cursor cursor = db.query(llsif, new String [])
+        //Cursor cursor = db.query(llsif, new String []);
 
-        SELECT name, attribute, easy,easybondlp FROM LLSIF WHERE attribute = "Smile" ORDER BY easybondlp DESC;
+        //SELECT name, attribute, easy,easybondlp; FROM LLSIF; WHERE attribute = "Smile"; ORDER BY; easybondlp DESC;
 
         return null;
     }
