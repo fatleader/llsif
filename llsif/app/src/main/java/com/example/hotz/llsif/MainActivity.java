@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
                     packet.putInt("difficulty", difficulty);
                     Intent i = new Intent(MainActivity.this, ResultActivity.class);
                     i.putExtras(packet);
-                    //startActivity(i);
+                    startActivity(i);
 
 
 

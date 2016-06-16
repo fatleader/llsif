@@ -33,9 +33,9 @@ public class ResultActivity extends ListActivity{
         //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 
         // get our query string, remember our difficulty should not be null now!
-        //String query = getBundle();
+        String query = getBundle();
         // call dbhelper constructor!
-        //openAndQueryDatabase(query, difficulty);
+        openAndQueryDatabase(query, difficulty);
 
 
     }
@@ -93,8 +93,9 @@ public class ResultActivity extends ListActivity{
             Log.e(getClass().getSimpleName(), "db read err!");
         } finally{
             if (db!=null)
-                db.execSQL("DELETE FROM " + tableName);
-            db.close();
+                //db.execSQL("DELETE FROM " + tableName);
+                System.out.println("DB IS NULL!");
+                db.close();
         }
     }
 }
