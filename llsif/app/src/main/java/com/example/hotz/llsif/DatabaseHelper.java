@@ -1,4 +1,4 @@
-package com.example.hotz.llsif;
+﻿package com.example.hotz.llsif;
 
 import android.content.Context;
 import android.database.Cursor;

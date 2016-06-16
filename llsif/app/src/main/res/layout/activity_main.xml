@@ -22,6 +22,9 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
-        android:src="@android:drawable/ic_menu_search" />
+        android:src="@android:drawable/ic_menu_search"
+        android:accessibilityLiveRegion="assertive"
+        app:backgroundTint="#FF4D4D" />
 
 </android.support.design.widget.CoordinatorLayout>
+
