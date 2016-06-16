@@ -24,18 +24,18 @@ public class ResultActivity extends ListActivity{
     private ArrayList<String> results = new ArrayList<String>();
     private String tableName = DatabaseHelper.TABLE_NAME;
     private SQLiteDatabase db;
-    private int difficulty;
+    public int difficulty;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 
         // get our query string, remember our difficulty should not be null now!
-        String query = getBundle();
+        //String query = getBundle();
         // call dbhelper constructor!
-        openAndQueryDatabase(query, difficulty);
+        //openAndQueryDatabase(query, difficulty);
 
 
     }
