@@ -19,14 +19,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Love Live! Bond App"
-        android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:textSize="50sp"
         android:textAlignment="center"
         android:fontFamily="monospace"
         android:id="@+id/title"
         android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="false"
         android:textColor="#FF4D4D"/>
 
     <TextView
@@ -39,7 +37,6 @@
         android:id="@+id/cattribute"
         android:textColor="#FF4D4D"
         android:layout_below="@+id/difficulty"
-        android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginTop="65dp" />
 
@@ -48,13 +45,11 @@
         android:layout_height="wrap_content"
         android:id="@+id/attributes"
         android:layout_below="@+id/cattribute"
-        android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true">
 
         <RadioButton android:id="@+id/cool"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/attributes"
             android:text="Cool"
             android:onClick="onAttributeButtonClicked"
             android:layout_gravity="center_horizontal"
@@ -86,7 +81,6 @@
         android:id="@+id/textView3"
         android:textColor="#FF4D4D"
         android:layout_below="@+id/title"
-        android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="50dp"
         android:layout_alignParentStart="true" />
@@ -97,7 +91,6 @@
         android:layout_below="@+id/textView3"
         android:layout_marginTop="5dp"
         android:id="@+id/difficulty"
-        android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true">
 
 

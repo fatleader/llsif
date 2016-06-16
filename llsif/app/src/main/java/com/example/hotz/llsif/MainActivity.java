@@ -23,10 +23,9 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     DatabaseHelper songDb;
-
-    public int difficulty = -1;
-    public int attribute = -1;
-    public String result = null;
+    private int difficulty = -1;
+    private int attribute = -1;
+    private String result = null;
 
     // we define 2 flags, difficulty and attribute
 
@@ -54,8 +53,6 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // initialize difficulty
-
 
                 if (difficulty != -1 && attribute != -1){
                     // This is where we are going to send our query.
@@ -66,13 +63,6 @@ public class MainActivity extends AppCompatActivity {
                     Intent i = new Intent(MainActivity.this, ResultActivity.class);
                     i.putExtras(packet);
                     startActivity(i);
-
-
-
-                    //Context context = getApplicationContext();
-
-                    //Toast toast = Toast.makeText(context, result, Toast.LENGTH_LONG);
-                    //toast.show();
 
                 } else{
                     // do nothing.
@@ -172,15 +162,15 @@ public class MainActivity extends AppCompatActivity {
         if (difficulty == 0){
 
             if (attribute == 0){
-                selected = "SELECT _id, name, attribute, easy, easybondlp FROM LLSIF WHERE attribute = 'Cool'";
+                selected = "SELECT _id, name, attribute, easy, easybondlp FROM LLSIF WHERE attribute = 'Cool';";
             }
 
             if (attribute == 1){
-                selected = "SELECT _id, name, attribute, easy, easybondlp FROM LLSIF WHERE attribute = 'Pure'";
+                selected = "SELECT _id, name, attribute, easy, easybondlp FROM LLSIF WHERE attribute = 'Pure';";
             }
 
             if (attribute == 2){
-                selected = "SELECT _id, name, attribute, easy, easybondlp FROM LLSIF WHERE attribute = 'Smile'";
+                selected = "SELECT _id, name, attribute, easy, easybondlp FROM LLSIF WHERE attribute = 'Smile';";
             }
 
         }
@@ -188,15 +178,15 @@ public class MainActivity extends AppCompatActivity {
         if (difficulty == 1){
 
             if (attribute == 0){
-                selected = "SELECT _id, name, attribute, medium, mediumbondlp FROM LLSIF WHERE attribute = 'Cool'";
+                selected = "SELECT _id, name, attribute, normal, normalbondlp FROM LLSIF WHERE attribute = 'Cool';";
             }
 
             if (attribute == 1){
-                selected = "SELECT _id, name, attribute, medium, mediumbondlp FROM LLSIF WHERE attribute = 'Pure'";
+                selected = "SELECT _id, name, attribute, normal, normalbondlp FROM LLSIF WHERE attribute = 'Pure';";
             }
 
             if (attribute == 2){
-                selected = "SELECT _id, name, attribute, medium, mediumbondlp FROM LLSIF WHERE attribute = 'Smile'";
+                selected = "SELECT _id, name, attribute, normal, normalbondlp FROM LLSIF WHERE attribute = 'Smile';";
             }
 
         }
@@ -204,15 +194,15 @@ public class MainActivity extends AppCompatActivity {
         if (difficulty == 2){
 
             if (attribute == 0){
-                selected = "SELECT _id, name, attribute, hard, hardbondlp FROM LLSIF WHERE attribute = 'Cool'";
+                selected = "SELECT _id, name, attribute, hard, hardbondlp FROM LLSIF WHERE attribute = 'Cool';";
             }
 
             if (attribute == 1){
-                selected = "SELECT _id, name, attribute, hard, hardbondlp FROM LLSIF WHERE attribute = 'Pure'";
+                selected = "SELECT _id, name, attribute, hard, hardbondlp FROM LLSIF WHERE attribute = 'Pure';";
             }
 
             if (attribute == 2){
-                selected = "SELECT _id, name, attribute, hard, hardbondlp FROM LLSIF WHERE attribute = 'Smile'";
+                selected = "SELECT _id, name, attribute, hard, hardbondlp FROM LLSIF WHERE attribute = 'Smile';";
             }
 
 
@@ -221,15 +211,15 @@ public class MainActivity extends AppCompatActivity {
         if (difficulty == 3){
 
             if (attribute == 0){
-                selected = "SELECT _id, name, attribute, expert, expertbondlp FROM LLSIF WHERE attribute = 'Cool'";
+                selected = "SELECT _id, name, attribute, expert, expertbondlp FROM LLSIF WHERE attribute = 'Cool';";
             }
 
             if (attribute == 1){
-                selected = "SELECT _id, name, attribute, expert, expertbondlp FROM LLSIF WHERE attribute = 'Pure'";
+                selected = "SELECT _id, name, attribute, expert, expertbondlp FROM LLSIF WHERE attribute = 'Pure';";
             }
 
             if (attribute == 2){
-                selected = "SELECT _id, name, attribute, expert, expertbondlp FROM LLSIF WHERE attribute = 'Smile'";
+                selected = "SELECT _id, name, attribute, expert, expertbondlp FROM LLSIF WHERE attribute = 'Smile';";
             }
 
         }

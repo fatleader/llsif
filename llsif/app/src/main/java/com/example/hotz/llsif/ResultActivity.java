@@ -35,9 +35,10 @@ public class ResultActivity extends ListActivity{
         // get our query string, remember our difficulty should not be null now!
         String query = getBundle();
         // call dbhelper constructor!
+        System.out.println(query);
         openAndQueryDatabase(query, difficulty);
 
-
+        displayResultList();
     }
 
     public String getBundle(){
@@ -62,31 +63,39 @@ public class ResultActivity extends ListActivity{
         try{
 
             DatabaseHelper dbHelper = new DatabaseHelper(this.getApplicationContext());
-            db = dbHelper.getWritableDatabase();
+            db = dbHelper.getReadableDatabase();
             Cursor cursor = db.rawQuery(query,null);
 
-            if (cursor != null){
-                if (cursor.moveToFirst()){
-                    do{
-                        String name = cursor.getString(cursor.getColumnIndex("name"));
-                        String attribute = cursor.getString(cursor.getColumnIndex("attribute"));
-                        int pts = -1;
-                        int bondlp = -1;
-                        // switch statement for choosing right difficulty.
-                        switch (difficulty){
-                            case 0: pts = cursor.getInt(cursor.getColumnIndex("easy"));
-                                    bondlp = cursor.getInt(cursor.getColumnIndex("easybondlp"));
-                            case 1: pts = cursor.getInt(cursor.getColumnIndex("medium"));
-                                    bondlp = cursor.getInt(cursor.getColumnIndex("mediumbondlp"));
-                            case 2: pts = cursor.getInt(cursor.getColumnIndex("hard"));
-                                    bondlp = cursor.getInt(cursor.getColumnIndex("hardbondlp"));
-                            case 3: pts = cursor.getInt(cursor.getColumnIndex("expert"));
-                                    bondlp = cursor.getInt(cursor.getColumnIndex("expertbondlp"));
-                        }
-                        results.add("Title: " + name +", Attribute: " + attribute + ", Pts: "
-                                + String.valueOf(pts) + ", maxbondlp: "+ String.valueOf(bondlp));
-                    } while (cursor.moveToNext());
-                }
+            if (cursor.moveToFirst()){
+                do{
+                    String name = cursor.getString(cursor.getColumnIndex("name"));
+                    String attribute = cursor.getString(cursor.getColumnIndex("attribute"));
+                    float pts = -1;
+                    float bondlp = -1;
+                    System.out.println("We are in the cursor is moving" + " " + name + " " + attribute);
+                    // switch statement for choosing right difficulty.
+                    switch (difficulty){
+                        case 0:
+                            System.out.println("In the case0!");
+                            pts = cursor.getFloat(cursor.getColumnIndex("easy"));
+                            bondlp = cursor.getFloat(cursor.getColumnIndex("easybondlp"));
+                            break;
+                        case 1: System.out.println("In the case1!");
+                            pts = cursor.getFloat(cursor.getColumnIndex("normal"));
+                            bondlp = cursor.getFloat(cursor.getColumnIndex("normalbondlp"));
+                            break;
+                        case 2: System.out.println("In the case2!");
+                            pts = cursor.getFloat(cursor.getColumnIndex("hard"));
+                            bondlp = cursor.getFloat(cursor.getColumnIndex("hardbondlp"));
+                            break;
+                        case 3: System.out.println("In the case3!");
+                            pts = cursor.getFloat(cursor.getColumnIndex("expert"));
+                            bondlp = cursor.getFloat(cursor.getColumnIndex("expertbondlp"));
+                            break;
+                    }
+                    results.add("Title: " + name +", Attribute: " + attribute + ", Pts: "
+                            + String.valueOf(pts) + ", maxbondlp: "+ String.valueOf(bondlp));
+                } while (cursor.moveToNext());
             }
         }
         catch (SQLiteException se){
@@ -94,7 +103,7 @@ public class ResultActivity extends ListActivity{
         } finally{
             if (db!=null)
                 //db.execSQL("DELETE FROM " + tableName);
-                System.out.println("DB IS NULL!");
+                System.out.println("DB IS NOT NULL!");
                 db.close();
         }
     }
