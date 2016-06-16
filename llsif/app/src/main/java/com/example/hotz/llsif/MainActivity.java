@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         //setSupportActionBar(toolbar);
 
+
         Typeface myTypeface = Typeface.createFromAsset(getAssets(),"LISTFCEI.TTF");
         TextView myTextview = (TextView)findViewById(R.id.title);
         myTextview.setTypeface(myTypeface);
