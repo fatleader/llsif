@@ -13,6 +13,11 @@ import android.view.MenuItem;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
+/**
+ * @author Alena Calma
+ * @version 1.2
+ */
+
 public class MainActivity extends AppCompatActivity {
 
     DatabaseHelper songDb;
@@ -49,13 +54,17 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                // This is where we are going to send our query.
-                Bundle queryString = new Bundle();
-                queryString.putString("query", result);
-
-                Intent i = new Intent(MainActivity.this, ResultActivity.class);
-                i.putExtras(queryString);
-                startActivity(i);
+                if (difficulty != -1 && attribute != -1){
+                    // This is where we are going to send our query.
+                    Bundle packet = new Bundle();
+                    packet.putString("query", result);
+                    packet.putInt("difficulty", difficulty);
+                    Intent i = new Intent(MainActivity.this, ResultActivity.class);
+                    i.putExtras(packet);
+                    startActivity(i);
+                } else{
+                    // do nothing.
+                }
             }
         });
     }
@@ -141,15 +150,15 @@ public class MainActivity extends AppCompatActivity {
         if (difficulty == 0){
 
             if (attribute == 0){
-                result = "SELECT name, attribute, easy, easybondlp FROM LLSIF WHERE attribute = 'Cool' ORDER BY easybondlp DESC ";
+                result = "SELECT _id, name, attribute, easy, easybondlp FROM LLSIF WHERE attribute = 'Cool'";
             }
 
             if (attribute == 1){
-                result = "SELECT name, attribute, easy, easybondlp FROM LLSIF WHERE attribute = 'Pure' ORDER BY easybondlp DESC ";
+                result = "SELECT _id, name, attribute, easy, easybondlp FROM LLSIF WHERE attribute = 'Pure'";
             }
 
             if (attribute == 2){
-                result = "SELECT name, attribute, easy, easybondlp FROM LLSIF WHERE attribute = 'Smile' ORDER BY easybondlp DESC ";
+                result = "SELECT _id, name, attribute, easy, easybondlp FROM LLSIF WHERE attribute = 'Smile'";
             }
 
         }
@@ -157,15 +166,15 @@ public class MainActivity extends AppCompatActivity {
         if (difficulty == 1){
 
             if (attribute == 0){
-                result = "SELECT name, attribute, medium, mediumbondlp FROM LLSIF WHERE attribute = 'Cool' ORDER BY mediumbondlp DESC ";
+                result = "SELECT _id, name, attribute, medium, mediumbondlp FROM LLSIF WHERE attribute = 'Cool'";
             }
 
             if (attribute == 1){
-                result = "SELECT name, attribute, medium, mediumbondlp FROM LLSIF WHERE attribute = 'Pure' ORDER BY mediumbondlp DESC ";
+                result = "SELECT _id, name, attribute, medium, mediumbondlp FROM LLSIF WHERE attribute = 'Pure'";
             }
 
             if (attribute == 2){
-                result = "SELECT name, attribute, medium, mediumbondlp FROM LLSIF WHERE attribute = 'Smile' ORDER BY mediumbondlp DESC ";
+                result = "SELECT _id, name, attribute, medium, mediumbondlp FROM LLSIF WHERE attribute = 'Smile'";
             }
 
         }
@@ -173,15 +182,15 @@ public class MainActivity extends AppCompatActivity {
         if (difficulty == 2){
 
             if (attribute == 0){
-                result = "SELECT name, attribute, hard, hardbondlp FROM LLSIF WHERE attribute = 'Cool' ORDER BY hardbondlp DESC ";
+                result = "SELECT _id, name, attribute, hard, hardbondlp FROM LLSIF WHERE attribute = 'Cool'";
             }
 
             if (attribute == 1){
-                result = "SELECT name, attribute, hard, hardbondlp FROM LLSIF WHERE attribute = 'Pure' ORDER BY hardbondlp DESC ";
+                result = "SELECT _id, name, attribute, hard, hardbondlp FROM LLSIF WHERE attribute = 'Pure'";
             }
 
             if (attribute == 2){
-                result = "SELECT name, attribute, hard, hardbondlp FROM LLSIF WHERE attribute = 'Smile' ORDER BY hardbondlp DESC ";
+                result = "SELECT _id, name, attribute, hard, hardbondlp FROM LLSIF WHERE attribute = 'Smile'";
             }
 
 
@@ -190,15 +199,15 @@ public class MainActivity extends AppCompatActivity {
         if (difficulty == 3){
 
             if (attribute == 0){
-                result = "SELECT name, attribute, expert, expertbondlp FROM LLSIF WHERE attribute = 'Cool' ORDER BY expertbondlp DESC ";
+                result = "SELECT _id, name, attribute, expert, expertbondlp FROM LLSIF WHERE attribute = 'Cool'";
             }
 
             if (attribute == 1){
-                result = "SELECT name, attribute, expert, expertbondlp FROM LLSIF WHERE attribute = 'Pure' ORDER BY expertbondlp DESC ";
+                result = "SELECT _id, name, attribute, expert, expertbondlp FROM LLSIF WHERE attribute = 'Pure'";
             }
 
             if (attribute == 2){
-                result = "SELECT name, attribute, expert, expertbondlp FROM LLSIF WHERE attribute = 'Smile' ORDER BY expertbondlp DESC ";
+                result = "SELECT _id, name, attribute, expert, expertbondlp FROM LLSIF WHERE attribute = 'Smile'";
             }
 
         }
